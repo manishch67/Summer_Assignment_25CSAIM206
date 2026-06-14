@@ -1,0 +1,27 @@
+//Write a program to Convert binary to decimal.
+#include <stdio.h>
+#include <math.h>
+
+int binaryToDecimal(long long n) {
+    int decimal = 0, i = 0, remainder;
+
+    while (n != 0) {
+        remainder = n % 10;          
+        n = n / 10;                  
+        decimal += remainder * pow(2, i); 
+        i++;
+    }
+
+    return decimal;
+}
+
+int main() {
+    long long binary;
+    printf("Enter a binary number: ");
+    scanf("%lld", &binary);
+
+    int decimal = binaryToDecimal(binary);
+    printf("Decimal: %d\n", decimal);
+
+    return 0;
+}
